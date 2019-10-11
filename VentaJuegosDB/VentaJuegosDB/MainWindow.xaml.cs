@@ -100,7 +100,7 @@ namespace VentaJuegosDB
                 {
                     cmd.CommandText = "update Juegos set Nombre='" + txtnombreVideojuego.Text
                         + "',Desarrollador='" + cbDesarrolladores.Text + "',Telfono='" + txtTelefono.Text
-                        + "',Direccion='" + txtDireccion.Text + "',Precio='" + txtprecio +  "'where id=" + txtId.Text;
+                        + "',Direccion='" + txtDireccion.Text + "',Precio='" + txtprecio +  "'where Id=" + txtId.Text;
                     cmd.ExecuteNonQuery();
                     MostrarDatos();
                     MessageBox.Show("Datos del Juego Actualizados...");
@@ -137,7 +137,7 @@ namespace VentaJuegosDB
         {
             if (gvDatos.SelectedItems.Count > 0 )
             {
-                DataRowView row = (DataRowView)gvDatos.SelectedItems[0];
+                DataRowView row = (DataRowView) gvDatos.SelectedItems[0];
                 OleDbCommand cmd = new OleDbCommand();
                 if (con.State != ConnectionState.Open)
                     con.Open();
