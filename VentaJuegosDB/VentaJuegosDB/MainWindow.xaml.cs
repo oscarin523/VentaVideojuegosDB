@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.OleDb; //Libreria OleDB
 using System.Data; //System Data
+
 namespace VentaJuegosDB
 {
     /// <summary>
@@ -28,7 +29,7 @@ namespace VentaJuegosDB
             InitializeComponent();
             //conectamos la base de datos
             con = new OleDbConnection();
-            con.ConnectionString = "Provider=Microsoft.Jet.Oledb.4.0;Data Source =" + AppDomain.CurrentDomain.BaseDirectory + "\\VentaJuegosDB.mdb";
+            con.ConnectionString = "Provider=Microsoft.Jet.Oledb.4.0; Data Source=" + AppDomain.CurrentDomain.BaseDirectory+ "\\VentaJuegosDB.mdb";
             MostrarDatos();
         }
         //Registros de la tabla
@@ -47,13 +48,13 @@ namespace VentaJuegosDB
 
             if (dt.Rows.Count>0)
             {
-                lbContenido.Visibility = System.Windows.Visibility.Visible;
-                gvDatos.Visibility = System.Windows.Visibility.Hidden;
+                lbContenido.Visibility = System.Windows.Visibility.Hidden;
+                gvDatos.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {
-                lbContenido.Visibility = System.Windows.Visibility.Hidden;
-                gvDatos.Visibility = System.Windows.Visibility.Visible;
+                lbContenido.Visibility = System.Windows.Visibility.Visible;
+                gvDatos.Visibility = System.Windows.Visibility.Hidden;
             }
         }
         //Para limpieza de los campos 
@@ -84,7 +85,7 @@ namespace VentaJuegosDB
                     if (cbDesarrolladores.Text != "Selecciona el desarrollador ")
                     {
                         cmd.CommandText = "insert into Juegos(Id,Nombre,Precio,Telefono,Direccion,Desarrolladores)" + "Values("
-                            + txtId.Text + ",'" + txtnombreVideojuego.Text + "','" + txtprecio.Text + "','" + txtTelefono.Text + "'," + txtDireccion.Text + ",'"+ cbDesarrolladores.Text + "')";
+                            + txtnombreVideojuego.Text + ",'" + txtId.Text + "','" + cbDesarrolladores.Text + "','" + txtprecio.Text + "'," + txtTelefono.Text + ",'"+ txtDireccion.Text + "')";
                         cmd.ExecuteNonQuery();
                         MostrarDatos();
                         MessageBox.Show("Videojuego agregado a la tienda...");
@@ -141,7 +142,7 @@ namespace VentaJuegosDB
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "delete from Juegos where id=" + row["id"].ToString();
+                cmd.CommandText = "delete from Juegos where Id=" + row["Id"].ToString();
                 cmd.ExecuteNonQuery();
                 MostrarDatos();
                 MessageBox.Show("Juego eliminado de la base de datos correctamente...");

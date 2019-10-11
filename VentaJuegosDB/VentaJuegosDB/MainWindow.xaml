@@ -81,12 +81,6 @@
             <WrapPanel Margin="20" HorizontalAlignment="Center">
                 <DataGrid AutoGenerateColumns="True" Name="gvDatos" SelectionMode="Single" FontSize="15" Padding="5" Background="Black" />
             </WrapPanel>
-
-
         </StackPanel>
-
     </DockPanel>
-
-
-
 </Window>
