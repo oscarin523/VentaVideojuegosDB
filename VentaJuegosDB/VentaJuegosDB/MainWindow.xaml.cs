@@ -148,6 +148,11 @@ namespace VentaJuegosDB
                 MessageBox.Show("Juego eliminado de la base de datos correctamente...");
                 LimpiartTodo();
             }
+            else
+            {
+
+                MessageBox.Show("Seleccione el Juego que desea eliminar....");
+            }
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
