@@ -84,8 +84,8 @@ namespace VentaJuegosDB
                 {
                     if (cbDesarrolladores.Text != "Selecciona el desarrollador ")
                     {
-                        cmd.CommandText = "insert into Juegos(Id,Nombre,Precio,Telefono,Direccion,Desarrolladores)" + "Values("
-                            + txtnombreVideojuego.Text + ",'" + txtId.Text + "','" + cbDesarrolladores.Text + "','" + txtprecio.Text + "'," + txtTelefono.Text + ",'"+ txtDireccion.Text + "')";
+                        cmd.CommandText = "insert into Juegos(Id,Nombre,Precio,Telefono,Direccion,Desarrolladores)" + "Values('" +
+                           txtId.Text + "','" + txtnombreVideojuego.Text + "','" + txtprecio.Text + "','" + txtTelefono.Text + "','" + txtDireccion.Text + "','"  + cbDesarrolladores.Text + "')";
                         cmd.ExecuteNonQuery();
                         MostrarDatos();
                         MessageBox.Show("Videojuego agregado a la tienda...");
@@ -99,8 +99,8 @@ namespace VentaJuegosDB
                 else
                 {
                     cmd.CommandText = "update Juegos set Nombre='" + txtnombreVideojuego.Text
-                        + "',Desarrollador='" + cbDesarrolladores.Text + "',Telfono='" + txtTelefono.Text
-                        + "',Direccion='" + txtDireccion.Text + "',Precio='" + txtprecio +  "'where Id=" + txtId.Text;
+                        + "',Desarrolladores='" + cbDesarrolladores.Text + "',Telefono='" + txtTelefono.Text
+                        + "',Direccion='" + txtDireccion.Text + "',Precio='" + txtprecio +  "'where Id=" + txtId.Text + "')";
                     cmd.ExecuteNonQuery();
                     MostrarDatos();
                     MessageBox.Show("Datos del Juego Actualizados...");
@@ -118,9 +118,9 @@ namespace VentaJuegosDB
             if (gvDatos.SelectedItems.Count>0)
             {
                 DataRowView row = (DataRowView)gvDatos.SelectedItems[0];
-                txtId.Text = row["id"].ToString();
-                txtnombreVideojuego.Text = row["Nombre del Videojuego"].ToString();
-                cbDesarrolladores.Text = row["Desarrollador"].ToString();
+                txtId.Text = row["Id"].ToString();
+                txtnombreVideojuego.Text = row["Nombre"].ToString();
+                cbDesarrolladores.Text = row["Desarrolladores"].ToString();
                 txtprecio.Text = row["Precio"].ToString();
                 txtTelefono.Text = row["Telefono"].ToString();
                 txtDireccion.Text = row["Direccion"].ToString();
