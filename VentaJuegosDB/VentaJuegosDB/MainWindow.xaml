@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VentaJuegosDB"
         mc:Ignorable="d"
-                Title="Tienda de ventas" Height="838" Width="952" Background="AliceBlue"
+                Title="Tienda de ventas" Height="1000" Width="1000" Background="AliceBlue"
     WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Window.Resources>
         <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Width" Value="250"/>
-            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Margin" Value="25"/>
         </Style>
 
         <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontSize" Value="25"/>
             <Setter Property="Width" Value="300"/>
             <Setter Property="Margin" Value="20"/>
         </Style>
@@ -39,12 +39,15 @@
                 <ComboBox FontSize="20" Name="cbDesarrolladores" Width="300" Margin="20">
                     <ComboBoxItem Content="Selecciona el desarrollador" Selector.IsSelected="True"/>
                     <ComboBoxItem Content="Gameloft"/>
+                    <ComboBoxItem Content="Epic Games"/>
                     <ComboBoxItem Content="Garena"/>
+                    <ComboBoxItem Content="Supercell"/>
                     <ComboBoxItem Content="Tencent Games"/>
+                    <ComboBoxItem Content="Robtop"/>
                     <ComboBoxItem Content="ActiVision"/>
                     <ComboBoxItem Content="Naughty dog"/>
                     <ComboBoxItem Content="EA"/>
-                    <ComboBoxItem Content="Rockstar"/>
+                    <ComboBoxItem Content="Rockstar games"/>
                     <ComboBoxItem Content="Nintendo"/>
                     <ComboBoxItem Content="Ubisoft"/>
                     <ComboBoxItem Content="Sega"/>
