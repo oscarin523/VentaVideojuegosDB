@@ -99,7 +99,7 @@ namespace VentaJuegosDB
                 else
                 {
                     cmd.CommandText = "update Juegos set Nombre='" + txtnombreVideojuego.Text
-                     + "',Precio='" + txtprecio.Text + "',Telefono='" + txtTelefono.Text + "',Direccion='" + txtDireccion.Text + "',Desarrolladores='" + cbDesarrolladores +
+                     + "',Precio='" + txtprecio.Text + "',Telefono='" + txtTelefono.Text + "',Direccion='" + txtDireccion.Text + "',Desarrolladores='" + cbDesarrolladores.Text +
                      "'where Id=" + txtId.Text;
                     cmd.ExecuteNonQuery();
                     MostrarDatos();

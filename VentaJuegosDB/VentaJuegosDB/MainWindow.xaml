@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VentaJuegosDB"
         mc:Ignorable="d"
-                Title="Tienda de ventas" Height="1000" Width="1000" Background="AliceBlue"
+                Title="Tienda de ventas"  Height="1080" Width="1920" WindowState="Maximized"
     WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -20,22 +20,25 @@
             <Setter Property="Margin" Value="20"/>
         </Style>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Foto/Fondo.jpg"/>
+    </Window.Background>
     <DockPanel Name ="dockMain" VerticalAlignment="Top" HorizontalAlignment="Center"
            LastChildFill="False">
         <StackPanel>
-            <Label Content="Venta de videojuegos"  HorizontalAlignment="Center" FontSize="36" FontWeight="Bold">
+            <Label Content="Venta de videojuegos" FontStyle="Italic" Foreground="AntiqueWhite" HorizontalAlignment="Center"  FontSize="30" FontWeight="Bold">
             </Label>
             <WrapPanel>
-                <TextBlock Text="Nombre del videojuego:"/>
+                <TextBlock Text="Nombre del videojuego:" Foreground="AliceBlue"/>
                 <TextBox Name ="txtnombreVideojuego"/>
             </WrapPanel>
 
             <WrapPanel>
-                <TextBlock Text = "Id del videojuego"/>
+                <TextBlock Text = "Id del videojuego" Foreground="AliceBlue"/>
                 <TextBox Name ="txtId"/>
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Desarrollador"/>
+                <TextBlock Text="Desarrollador" Foreground="AliceBlue"/>
                 <ComboBox FontSize="20" Name="cbDesarrolladores" Width="300" Margin="20">
                     <ComboBoxItem Content="Selecciona el desarrollador" Selector.IsSelected="True"/>
                     <ComboBoxItem Content="Gameloft"/>
@@ -57,19 +60,19 @@
 
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Precio"/>
+                <TextBlock Text="Precio" Background="AliceBlue" OpacityMask="#CC000000"/>
                 <TextBox Name="txtprecio"/>
 
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Telefono del vendedor"/>
+                <TextBlock Text="Telefono del vendedor" Background="AliceBlue" OpacityMask="#CC000000"/>
                 <TextBox Name="txtTelefono"/>
             </WrapPanel>
             <WrapPanel>
 
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Direccion"/>
+                <TextBlock Text="Direccion" Background="AliceBlue" OpacityMask="#CC000000" />
                 <TextBox Name="txtDireccion" TextWrapping="Wrap" AcceptsReturn="True" Height="75" />
             </WrapPanel>
             <WrapPanel>
@@ -81,6 +84,7 @@
                 <Button Name="btnCancelar" Content="Cancelar" FontSize="25" Width="120" Margin="5" Click="BtnCancelar_Click" />
                 <Button Name="btnSalir" Content="Salir" FontSize="25" Width="120" Margin="5" Background="#400000" Foreground="Bisque" Click="BtnSalir_Click" />
             </WrapPanel>
+            <Label Content="Existencias"  HorizontalAlignment="Center" FontSize="25" FontStyle="Oblique" Foreground="Black" Width="140" Background="AliceBlue" OpacityMask="#CC000000"/>
             <Label Content="No encontre Registros." Name="lbContenido" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFE10000"></Label>
             <WrapPanel Margin="20" HorizontalAlignment="Center">
                 <DataGrid AutoGenerateColumns="True" Name="gvDatos" SelectionMode="Single" FontSize="15" Padding="5" Background="Black" />
